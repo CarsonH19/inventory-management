@@ -1,11 +1,7 @@
-import { PrismaClient } from "@prisma/client/extension";
 import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
-
-interface Expense {
-  amount: number;
-}
 
 export const getDashboardMetrics = async (
   req: Request,
@@ -45,7 +41,7 @@ export const getDashboardMetrics = async (
       }
     );
     const expenseByCategorySummary = expenseByCategorySummaryRaw.map(
-      (item: Expense) => ({
+      (item) => ({
         ...item,
         amount: item.amount.toString(),
       })
@@ -59,6 +55,7 @@ export const getDashboardMetrics = async (
       expenseByCategorySummary,
     });
   } catch (error) {
-    res.status(500).json({ message: "error retrieving dashboard metrics" });
+    console.log(error);
+    res.status(500).json({ message: "Error retrieving dashboard metrics" });
   }
 };

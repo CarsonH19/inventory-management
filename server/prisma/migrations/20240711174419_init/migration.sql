@@ -56,7 +56,7 @@ CREATE TABLE "Expenses" (
 CREATE TABLE "SalesSummary" (
     "salesSummaryId" TEXT NOT NULL,
     "totalValue" DOUBLE PRECISION NOT NULL,
-    "changePercentage" DOUBLE PRECISION NOT NULL,
+    "changePercentage" DOUBLE PRECISION,
     "date" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "SalesSummary_pkey" PRIMARY KEY ("salesSummaryId")
@@ -83,13 +83,13 @@ CREATE TABLE "ExpenseSummary" (
 
 -- CreateTable
 CREATE TABLE "ExpenseByCategory" (
-    "expenseCategoryId" TEXT NOT NULL,
+    "expenseByCategoryId" TEXT NOT NULL,
     "expenseSummaryId" TEXT NOT NULL,
     "category" TEXT NOT NULL,
     "amount" BIGINT NOT NULL,
     "date" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "ExpenseByCategory_pkey" PRIMARY KEY ("expenseCategoryId")
+    CONSTRAINT "ExpenseByCategory_pkey" PRIMARY KEY ("expenseByCategoryId")
 );
 
 -- AddForeignKey

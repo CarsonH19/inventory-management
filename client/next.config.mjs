@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "s3-inventory-management-carsonh19.s3.amazonaws.com",
         port: "",
-        pathName: "/**",
+        pathname: "/**",
       }
     ]
   }

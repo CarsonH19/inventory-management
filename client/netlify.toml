@@ -1,8 +1,0 @@
-[build]
-  publish = "client/.next"
-  command = "npm run build --prefix client"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

@@ -1,7 +1,10 @@
 [build]
-  base = "client"  # This specifies the base directory for the build
-  command = "npm run build"  # This will run the build command from client/package.json
-  publish = ".next"  # This is where the built output is located
+  base = "client"
+  publish = ".next"
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[redirects]]
   from = "/*"

@@ -1,7 +1,7 @@
 [build]
   base = "client"  # This specifies the base directory for the build
   command = "npm run build"  # This will run the build command from client/package.json
-  publish = "client/.next"  # This is where the built output is located
+  publish = ".next"  # This is where the built output is located
 
 [[redirects]]
   from = "/*"

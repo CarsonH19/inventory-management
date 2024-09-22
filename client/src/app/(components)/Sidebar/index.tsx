@@ -15,6 +15,7 @@ import {
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SidebarLinkProps {
   href: string;
@@ -80,7 +81,13 @@ const Sidebar = () => {
           isSidebarCollapsed ? "px-5" : "px-8"
         }`}
       >
-        <div>Logo</div>
+        <Image
+          src="https://s3-inventory-management-carsonh19.s3.amazonaws.com/logo.png"
+          alt="Logo"
+          width={50}
+          height={50}
+          className="rounded-full h-full object-cover"
+        />
         <h1
           className={`${
             isSidebarCollapsed ? "hidden" : "block"
